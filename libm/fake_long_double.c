@@ -37,5 +37,7 @@ long lroundl(long double a1) { return lround(a1); }
 long double modfl(long double a1, long double* a2) { double i; double f = modf(a1, &i); *a2 = i; return f; }
 float nexttowardf(float a1, long double a2) { return nextafterf(a1, (float) a2); }
 long double roundl(long double a1) { return round(a1); }
-
+long double cosl(long double a1) { return cos(a1); }
+long double sinl(long double a1) { return sin(a1); }
+long double sqrtl(long double a1) { return sqrt(a1); }
 #endif // __LP64__

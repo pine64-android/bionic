@@ -392,7 +392,7 @@ _have_ipv6(unsigned mark) {
 	static const struct sockaddr_in6 sin6_test = {
 		.sin6_family = AF_INET6,
 		.sin6_addr.s6_addr = {  // 2000::
-			0x20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+			0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}
 		};
 	sockaddr_union addr = { .in6 = sin6_test };
 	return _test_connect(PF_INET6, &addr.generic, sizeof(addr.in6), mark);

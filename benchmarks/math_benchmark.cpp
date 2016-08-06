@@ -36,6 +36,19 @@ static void BM_math_sqrt(int iters) {
 }
 BENCHMARK(BM_math_sqrt);
 
+static void BM_math_sqrtf(int iters) {
+  StartBenchmarkTiming();
+
+  d = 0.0;
+  v = 2.0;
+  for (int i = 0; i < iters; ++i) {
+    d += sqrtf(v);
+  }
+
+  StopBenchmarkTiming();
+}
+BENCHMARK(BM_math_sqrtf);
+
 static void BM_math_log10(int iters) {
   StartBenchmarkTiming();
 
@@ -61,6 +74,46 @@ static void BM_math_logb(int iters) {
   StopBenchmarkTiming();
 }
 BENCHMARK(BM_math_logb);
+
+
+static void BM_math_pow(int iters) {
+  StartBenchmarkTiming();
+
+  d = 5;
+  v = 4096;
+  for (int i = 0; i < iters; ++i) {
+    pow(d, v);
+  }
+
+  StopBenchmarkTiming();
+}
+BENCHMARK(BM_math_pow);
+
+static void BM_math_cos(int iters) {
+  StartBenchmarkTiming();
+
+  d = 0.0;
+  v = 1234.0;
+  for (int i = 0; i < iters; ++i) {
+    d += cos(v);
+  }
+
+  StopBenchmarkTiming();
+}
+BENCHMARK(BM_math_cos);
+
+static void BM_math_sin(int iters) {
+  StartBenchmarkTiming();
+
+  d = 0.0;
+  v = 1234.0;
+  for (int i = 0; i < iters; ++i) {
+    d += sin(v);
+  }
+
+  StopBenchmarkTiming();
+}
+BENCHMARK(BM_math_sin);
 
 static void BM_math_isinf_NORMAL(int iters) {
   StartBenchmarkTiming();
