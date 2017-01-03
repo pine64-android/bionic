@@ -238,13 +238,11 @@ LOCAL_SRC_FILES_arm += \
     upstream-freebsd/lib/msun/src/e_asin.c \
     upstream-freebsd/lib/msun/src/e_atan2.c \
     upstream-freebsd/lib/msun/src/e_cosh.c \
-    upstream-freebsd/lib/msun/src/e_exp.c \
     upstream-freebsd/lib/msun/src/e_hypot.c \
     upstream-freebsd/lib/msun/src/e_log.c \
     upstream-freebsd/lib/msun/src/e_log10.c \
     upstream-freebsd/lib/msun/src/e_pow.c \
     upstream-freebsd/lib/msun/src/e_sinh.c \
-    upstream-freebsd/lib/msun/src/s_atan.c \
     upstream-freebsd/lib/msun/src/s_cbrt.c \
     upstream-freebsd/lib/msun/src/s_ceil.c \
     upstream-freebsd/lib/msun/src/s_ceilf.c \
@@ -279,12 +277,18 @@ LOCAL_SRC_FILES_arm += \
     upstream-freebsd/lib/msun/src/e_sqrt.c \
     upstream-freebsd/lib/msun/src/e_sqrtf.c \
     upstream-freebsd/lib/msun/src/s_floor.c \
+    upstream-freebsd/lib/msun/src/e_exp.c \
+    upstream-freebsd/lib/msun/src/s_atan.c \
 
 else
 LOCAL_SRC_FILES_arm += \
     arm/e_sqrt.S \
     arm/e_sqrtf.S \
     arm/s_floor.S \
+    arm/e_exp.s \
+    arm/s_atan.s
+
+LOCAL_CFLAGS_arm := -DKYLIN_NEON_OPTIMIZATION
 
 endif
 
